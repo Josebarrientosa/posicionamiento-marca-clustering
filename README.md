@@ -11,12 +11,11 @@ El posicionamiento de una marca electrónica pierde efectividad cuando se basa s
 - Fuente: base de evaluaciones perceptuales del libro *Multivariate Data Analysis* (Hair et al., 2010), ampliamente usada en estudios de marketing.
 - 3.050 observaciones, cada una correspondiente a la evaluación de un consumidor sobre una marca.
 - 4 marcas evaluadas (anonimizadas como Romeo, Sierra, Papa, Tango).
-- 9 atributos perceptuales medidos en escala Likert de 7 puntos: Adaptable, Best Value, Cutting Edge, Delightful, Exciting, Friendly, Generous, Helpful, Intuitive.
+- 9 atributos perceptuales medidos en escala Likert de 7 puntos: Adaptable, BestValue, CuttingEdge, Delightful, Exciting, Friendly, Generous, Helpful, Intuitive.
 
 ## Metodología
 
-- Análisis exploratorio de las percepciones por marca (gráficos comparativos 6–7 vs 1–2 por atributo).
-- Agrupación conceptual de los 9 atributos en tres dimensiones: racional, emocional y funcional.
+- Análisis exploratorio de las percepciones por marca (proporción de evaluaciones altas 6–7 y bajas 1–2 por atributo).
 - Estandarización de variables y uso de distancia euclidiana.
 - Selección del número óptimo de clusters mediante el método del codo (se compararon k=3 y k=4).
 - Segmentación final con K-Means (k=4) y caracterización de cada cluster.
@@ -24,7 +23,7 @@ El posicionamiento de una marca electrónica pierde efectividad cuando se basa s
 
 ## Resultados principales
 
-- Se identificaron 4 segmentos de consumidores con tamaños equilibrados (722, 837, 776 y 715 observaciones), lo que refuerza la estabilidad del modelo.
+- Se identificaron 4 segmentos de consumidores con tamaños equilibrados, lo que refuerza la estabilidad del modelo.
 - Los segmentos reflejan cuatro lógicas de percepción distintas: quienes priorizan la **funcionalidad**, quienes valoran la **innovación**, quienes buscan un perfil **equilibrado**, y quienes responden a la **emoción y la novedad**.
 - A nivel de posicionamiento, dos marcas mostraron perfiles bien diferenciados: Papa, asociada a lo funcional y cercano (intuitiva, confiable, fácil de usar), y Tango, asociada a lo emocional e innovador (moderna, atractiva, buena relación valor-precio).
 - A partir de estos perfiles se propusieron lineamientos estratégicos de posicionamiento por marca.
@@ -34,3 +33,31 @@ El posicionamiento de una marca electrónica pierde efectividad cuando se basa s
 - Python (pandas, scikit-learn, matplotlib, seaborn)
 
 ## Estructura del repositorio
+
+```
+.
+├── segmentacion_marca_kmeans.ipynb   # Notebook principal (análisis completo)
+├── data_percepcion_marca.xlsx        # Base de datos (Hair et al., 2010)
+├── requirements.txt                  # Dependencias
+└── README.md
+```
+
+## Cómo ejecutar
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/Josebarrientosa/posicionamiento-marca-clustering.git
+cd posicionamiento-marca-clustering
+
+# 2. Instalar dependencias
+pip install -r requirements.txt
+
+# 3. Abrir el notebook
+jupyter notebook segmentacion_marca_kmeans.ipynb
+```
+
+El notebook se ejecuta de principio a fin sin modificaciones, siempre que `data_percepcion_marca.xlsx` esté en la misma carpeta.
+
+## Nota sobre los datos
+
+La base de datos no es de elaboración propia: proviene de un dataset de referencia del libro de Hair et al. (2010). El aporte de este trabajo está en la metodología de análisis, la segmentación y la interpretación orientada a decisiones de negocio.
